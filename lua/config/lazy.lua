@@ -28,6 +28,13 @@ require("lazy").setup({
     { import = "plugins" },
     { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
     {
+    'windwp/nvim-autopairs',
+    event = "InsertEnter",
+    config = true
+    -- use opts = {} for passing setup options
+    -- this is equivalent to setup({}) function
+},
+    {
 	"nvim-treesitter/nvim-treesitter", 
 	build = ":TSUpdate"},
 	config = function () 
