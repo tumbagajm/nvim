@@ -26,11 +26,9 @@ require("lazy").setup({
   spec = {
     -- import your plugins
     { import = "plugins" },
-    { 'neovim/nvim-lspconfig' },
-    { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   },
   install = { 
-    colorscheme = { "habamax" }
+    colorscheme = { "catppuccin" }
   },
   -- automatically check for plugin updates
   checker = { enabled = true },
