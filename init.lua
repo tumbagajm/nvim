@@ -4,6 +4,6 @@ require("config.lazy")
 -- Load configurations
 require("config.vim-options")
 require("config.keymaps")
-require("config.lsp")
+require("config.lspconfig")
 require("config.theme")
 
