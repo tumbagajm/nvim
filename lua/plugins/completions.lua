@@ -1,6 +1,6 @@
 return {
   {
-    "hrsh7th/cmp-nvim-lsp"
+    "hrsh7th/cmp-nvim-lsp",
   },
   {
     "L3MON4D3/LuaSnip",
@@ -31,6 +31,17 @@ return {
           ["<C-Space>"] = cmp.mapping.complete(),
           ["<C-e>"] = cmp.mapping.abort(),
           ["<CR>"] = cmp.mapping.confirm({ select = true }),
+          ["<C-n>"] = cmp.mapping(function()
+            if require("luasnip").jumpable(1) then
+              require("luasnip").jump(1) -- Jump forward in the snippet
+            end
+          end, { "i", "s" }),
+
+          ["<C-p>"] = cmp.mapping(function()
+            if require("luasnip").jumpable(-1) then
+              require("luasnip").jump(-1) -- Jump backward in the snippet
+            end
+          end, { "i", "s" }),
         }),
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
