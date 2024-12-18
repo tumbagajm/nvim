@@ -10,6 +10,10 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     opts = {
+      ensure_installed = {
+        "jdtls",
+        "ts_ls",
+      },
       auto_install = true,
     },
   },
