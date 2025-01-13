@@ -13,6 +13,7 @@ return {
       ensure_installed = {
         "jdtls",
         "ts_ls",
+        "ruby_lsp"
       },
       auto_install = true,
     },
@@ -24,6 +25,9 @@ return {
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
       local lspconfig = require("lspconfig")
+      lspconfig.ruby_lsp.setup({
+        capabilities = capabilities
+      })
       lspconfig.ts_ls.setup({
         capabilities = capabilities
       })
@@ -43,6 +47,7 @@ return {
       vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, {})
       vim.keymap.set("n", "<leader>gr", vim.lsp.buf.references, {})
       vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, {})
+      vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, {})
     end,
   },
 }
