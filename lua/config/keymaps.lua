@@ -19,3 +19,11 @@ vim.keymap.set('n', '<C-j>', '<C-w>j', { silent = true }) -- Move to the bottom 
 vim.keymap.set('n', '<C-k>', '<C-w>k', { silent = true }) -- Move to the top panel
 vim.keymap.set('n', '<C-l>', '<C-w>l', { silent = true }) -- Move to the right panel
 
+
+-- UFO - Folding
+vim.keymap.set('n', 'zR', require('ufo').openAllFolds, { desc = 'Open all folds' })
+vim.keymap.set('n', 'zM', require('ufo').closeAllFolds, { desc = 'Close all folds' })
+vim.keymap.set('n', 'zc', 'zc', { desc = 'Close current fold' })
+vim.keymap.set('n', 'zo', 'zo', { desc = 'Open current fold' })
+vim.keymap.set('n', 'za', 'za', { desc = 'Toggle current fold' })
+
