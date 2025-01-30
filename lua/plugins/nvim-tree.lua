@@ -6,7 +6,6 @@ return {
     config = function()
         require'nvim-tree'.setup({
             -- your nvim-tree configuration options
-            auto_close = true,  -- automatically close the tree when the last file is closed
             open_on_tab = true,  -- open the tree when opening a tab
             update_focused_file = {
                 enable = true,
