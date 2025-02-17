@@ -37,3 +37,12 @@ vim.keymap.set("v", "<A-k>", ":m '<-2<CR>gv=gv", { noremap = true, silent = true
 vim.keymap.set("n", "<A-j>", ":m .+1<CR>==", { noremap = true, silent = true })
 vim.keymap.set("v", "<A-j>", ":m '>+1<CR>gv=gv", { noremap = true, silent = true })
 
+-- Indent with Tab in visual mode
+vim.api.nvim_set_keymap('v', '<Tab>', '>gv', { noremap = true, silent = true })
+-- Unindent with Shift+Tab in visual mode
+vim.api.nvim_set_keymap('v', '<S-Tab>', '<gv', { noremap = true, silent = true })
+-- Indent current line with >
+vim.api.nvim_set_keymap('n', '>', '>>', { noremap = true, silent = true })
+-- Unindent current line with <
+vim.api.nvim_set_keymap('n', '<', '<<', { noremap = true, silent = true })
+
