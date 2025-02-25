@@ -44,3 +44,7 @@ vim.api.nvim_set_keymap("v", "<S-Tab>", "<gv", { noremap = true, silent = true }
 vim.api.nvim_set_keymap("n", ">", ">>", { noremap = true, silent = true })
 -- Unindent current line with <
 vim.api.nvim_set_keymap("n", "<", "<<", { noremap = true, silent = true })
+
+vim.keymap.set("n", "<leader>fr", "<cmd>FlutterRun<CR>",{} )
+vim.keymap.set("n", "<leader>fh", "<cmd>FlutterReload<CR>", {})
+vim.keymap.set("n", "<leader>fq", "<cmd>FlutterQuit<CR>", {})
