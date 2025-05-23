@@ -14,6 +14,7 @@ return {
 				"jdtls",
 				"ts_ls",
 				"ruby_lsp",
+        "gopls",
 			},
 			auto_install = true,
 		},
@@ -23,8 +24,21 @@ return {
 		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
 			local lspconfig = require("lspconfig")
+
+      lspconfig.gopls.setup({
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+							shadow = true,
+						},
+						staticcheck = true,
+					},
+				},
+			})
+
 			lspconfig.ruby_lsp.setup({
 				capabilities = capabilities,
 			})
@@ -61,6 +75,15 @@ return {
 			vim.keymap.set("n", "<A-Insert>", function()
 				require("jdtls").code_action() -- Trigger the jdtls code action menu
 			end, { desc = "Generate Code (Getters/Setters)" })
+
+      vim.diagnostic.config({
+				update_in_insert = true,
+				virtual_text = {
+					prefix = "●",
+				},
+				signs = true,
+				underline = true,
+			})
 		end,
 	},
 }
